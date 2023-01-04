@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-boards-dialog',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./boards-dialog.component.scss']
 })
 export class BoardsDialogComponent {
+  boardForm = new FormGroup({
+    title: new FormControl(null, [Validators.required])
+  })
 
 }

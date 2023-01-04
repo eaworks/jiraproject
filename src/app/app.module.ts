@@ -10,6 +10,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { HeaderComponent } from './header/header.component';
 import { BoardsComponent } from './boards/boards.component';
 import { BoardsDialogComponent } from './boards/boards-dialog/boards-dialog.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,9 @@ import { BoardsDialogComponent } from './boards/boards-dialog/boards-dialog.comp
     MatToolbarModule,
     MatButtonModule,
     MatDialogModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
