@@ -10,5 +10,6 @@ export class BoardService {
   public crateBoard(title: any) {
     let newBoardsObj = { title: title, cards: [] }
     this.boards.push(newBoardsObj);
+    localStorage.setItem('boards', JSON.stringify(this.boards));
   }
 }
