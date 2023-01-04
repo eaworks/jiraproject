@@ -10,7 +10,7 @@
         </form>
     </mat-dialog-content>
     <mat-dialog-actions>
-        <button mat-raised-button color="accent">Iptal</button>
-        <button [disabled]="boardForm.invalid" mat-raised-button color="primary">Olustur</button>
+        <button (click)="close()" mat-raised-button color="accent">Iptal</button>
+        <button (click)="create()" [disabled]="boardForm.invalid" mat-raised-button color="primary">Olustur</button>
     </mat-dialog-actions>
 </div>
