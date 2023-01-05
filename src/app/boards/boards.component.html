@@ -3,7 +3,7 @@
         Ekle</button>
 </div>
 <div style="display: flex; justify-content: space-between; background-color: yellow; align-items: center; margin: 10px 30px; padding: 0 10px;"
-    *ngFor="let board of boardService.boards; let i=index">
+    *ngFor="let board of boardService.boards; let i=index" [routerLink]="'/view-board/'+i">
     <div>{{board.title}}</div>
 
     <button mat-icon-button (click)="deleteBoard(i)">
