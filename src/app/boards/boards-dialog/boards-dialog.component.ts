@@ -15,6 +15,7 @@ export class BoardsDialogComponent {
   constructor(private dialogRef: MatDialogRef<BoardsDialogComponent>, private boardService: BoardService) { }
   create() {
     this.boardService.crateBoard(this.boardForm.get('title')?.value);
+    this.dialogRef.close();
   }
   close() {
     this.dialogRef.close();
