@@ -15,5 +15,6 @@ export class ViewBoardComponent implements OnInit {
     this.boardIndex = this.route.snapshot.paramMap.get('boardIndex');
     this.boardTitle = this.boardService.boards[this.boardIndex].title;
   }
+  openNewCardDialog() { }
 
 }
