@@ -1,1 +1,21 @@
-<p>view-board-dialog works!</p>
+<h2 mat-dialog-title>Yeni Kart</h2>
+<mat-dialog-content>
+    <mat-form-field style="width: 100%;">
+        <mat-label>Baslik</mat-label>
+        <input matInput [(ngModel)]="title">
+    </mat-form-field>
+    <div *ngFor="let task of tasks; let i=index">
+        <mat-form-field style="width: 90%;">
+            <mat-label>Task{{i+1}}</mat-label>
+            <input matInput [(ngModel)]="tasks[i]">
+        </mat-form-field>
+        <button (click)="deleteTask(i)" mat-icon-button style="width: 10%;">
+            <mat-icon>delete</mat-icon>
+        </button>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button (click)="addTask()" mat-raised-button>Yeni Task Ekle</button>
+    <button (click)="close()" mat-raised-button color="accent">Iptal Et</button>
+    <button mat-raised-button color="primary">Ekle</button>
+</mat-dialog-actions>

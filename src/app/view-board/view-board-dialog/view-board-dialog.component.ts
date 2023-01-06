@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-view-board-dialog',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./view-board-dialog.component.scss']
 })
 export class ViewBoardDialogComponent {
+  dialogRef = inject(MatDialogRef<ViewBoardDialogComponent>)
+  title: string = "";
+  tasks: Array<string> = [""];
+  tasksLoop: any = [false];
+  deleteTask(i: number) { }
+  addTask() {
+    this.tasks.push("");
+    this.tasksLoop.push(false);
+  }
+  close() {
+    this.dialogRef.close();
+  }
 
 }
