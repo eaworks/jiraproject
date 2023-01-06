@@ -17,6 +17,9 @@ export class BoardService {
     this.boards.push(newBoardsObj);
     localStorage.setItem('boards', JSON.stringify(this.boards));
   }
+  public updateDataToLocaleStrage() {
+    localStorage.setItem('boards', JSON.stringify(this.boards))
+  }
   public deleteBoard(boardNumber: number) {
     this.boards.splice(boardNumber, 1);
     localStorage.setItem('boards', JSON.stringify(this.boards));

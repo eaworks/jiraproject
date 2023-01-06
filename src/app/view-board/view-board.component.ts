@@ -20,7 +20,8 @@ export class ViewBoardComponent implements OnInit {
   }
   openNewCardDialog() {
     const dialogRef = this.matDialog.open(ViewBoardDialogComponent, {
-      width: '500px'
+      width: '500px',
+      data: { boardIndex: this.boardIndex }
     })
   }
 
