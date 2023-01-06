@@ -15,6 +15,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { ViewBoardComponent } from './view-board/view-board.component';
+import { ViewBoardDialogComponent } from './view-board/view-board-dialog/view-board-dialog.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ViewBoardComponent } from './view-board/view-board.component';
     HeaderComponent,
     BoardsComponent,
     BoardsDialogComponent,
-    ViewBoardComponent
+    ViewBoardComponent,
+    ViewBoardDialogComponent
   ],
   imports: [
     BrowserModule,
