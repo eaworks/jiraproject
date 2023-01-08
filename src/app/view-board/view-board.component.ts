@@ -32,7 +32,7 @@ export class ViewBoardComponent implements OnInit {
   editCard(indexCard: number, card: any) {
     const dialogRef = this.matDialog.open(ViewBoardDialogComponent, {
       width: '500px',
-      data: { boardIndex: this.boardIndex, editMode: true }
+      data: { boardIndex: this.boardIndex, cardIndex: indexCard, editMode: true }
     })
   }
 

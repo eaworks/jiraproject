@@ -18,7 +18,11 @@ export class ViewBoardDialogComponent implements OnInit {
   tasks: Array<string> = [""];
   tasksLoop: any = [false];
   ngOnInit(): void {
-    let a = this.data;
+    if (this.data.editMode) {
+      this.title = this.boardService.boards[this.data.boardIndex].cards[this.data.cardIndex].title;
+      this.tasksLoop = this.boardService.boards[this.data.boardIndex].cards[this.data.cardIndex].status;
+      this.tasks = this.boardService.boards[this.data.boardIndex].cards[this.data.cardIndex].checklist;
+    }
   }
   deleteTask(i: number) { }
   addTask() {
@@ -32,11 +36,18 @@ export class ViewBoardDialogComponent implements OnInit {
     if (this.tasks.some((element: string) => element === "")) {
       this._snackBar.open("Yeni Taski Giriniz", "Ok");
     } else {
-      this.boardService.boards[this.data.boardIndex].cards.push({
-        title: this.title,
-        checklist: this.tasks,
-        status: this.tasksLoop,
-      });
+      if (!this.data.editMode) {
+        this.boardService.boards[this.data.boardIndex].cards.push({
+          title: this.title,
+          checklist: this.tasks,
+          status: this.tasksLoop,
+        });
+      } else {
+        this.boardService.boards[this.data.boardIndex].cards[this.data.cardIndex].title = this.title;
+        this.boardService.boards[this.data.boardIndex].cards[this.data.cardIndex].status = this.tasksLoop;
+        this.boardService.boards[this.data.boardIndex].cards[this.data.cardIndex].checklist = this.tasks;
+      }
+
       this.boardService.updateDataToLocaleStrage();
       this.close();
     }
