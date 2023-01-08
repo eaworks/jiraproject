@@ -24,7 +24,10 @@ export class ViewBoardDialogComponent implements OnInit {
       this.tasks = this.boardService.boards[this.data.boardIndex].cards[this.data.cardIndex].checklist;
     }
   }
-  deleteTask(i: number) { }
+  deleteTask(i: number) {
+    this.tasks.splice(i, 1);
+    this.tasksLoop.splice(i, 1);
+  }
   addTask() {
     this.tasks.push("");
     this.tasksLoop.push(false);
