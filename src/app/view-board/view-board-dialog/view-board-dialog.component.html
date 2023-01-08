@@ -1,4 +1,4 @@
-<h2 mat-dialog-title>Yeni Kart</h2>
+<h2 mat-dialog-title>{{data.editMode ? 'Karti Guncelle':'Yeni Kart'}}</h2>
 <mat-dialog-content>
     <mat-form-field style="width: 100%;">
         <mat-label>Baslik</mat-label>
@@ -17,5 +17,5 @@
 <mat-dialog-actions>
     <button (click)="addTask()" mat-raised-button>Yeni Task Ekle</button>
     <button (click)="close()" mat-raised-button color="accent">Iptal Et</button>
-    <button (click)="create()" mat-raised-button color="primary">Ekle</button>
+    <button (click)="create()" mat-raised-button color="primary">{{data.editMode ? 'Guncelle':'Ekle'}}</button>
 </mat-dialog-actions>

@@ -21,11 +21,19 @@ export class ViewBoardComponent implements OnInit {
   openNewCardDialog() {
     const dialogRef = this.matDialog.open(ViewBoardDialogComponent, {
       width: '500px',
-      data: { boardIndex: this.boardIndex }
+      data: { boardIndex: this.boardIndex, editMode: false }
     })
   }
 
-  deleteCard(indexCard: number) { }
-  editCard(indexCard: number, card: any) { }
+  deleteCard(indexCard: number) {
+    this.boardService.boards[this.boardIndex].cards.splice(indexCard, 1);
+    this.boardService.updateDataToLocaleStrage();
+  }
+  editCard(indexCard: number, card: any) {
+    const dialogRef = this.matDialog.open(ViewBoardDialogComponent, {
+      width: '500px',
+      data: { boardIndex: this.boardIndex, editMode: true }
+    })
+  }
 
 }
