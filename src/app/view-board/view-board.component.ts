@@ -25,4 +25,7 @@ export class ViewBoardComponent implements OnInit {
     })
   }
 
+  deleteCard(indexCard: number) { }
+  editCard(indexCard: number, card: any) { }
+
 }

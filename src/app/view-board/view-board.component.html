@@ -2,3 +2,17 @@
     <button mat-raised-button (click)="openNewCardDialog()" mat-raised-button color="accent">Yeni Kart
         Ekle</button>
 </div>
+<mat-card *ngFor="let card of boardService.boards[boardIndex].cards; let i=index">
+    <mat-card-title>{{card.title}}</mat-card-title>
+    <mat-card-content>
+        <div>
+            <mat-checkbox *ngFor="let checkbox of card.checklist; let ikinci =index" [(ngModel)]="card.status[ikinci]">
+                {{checkbox}}
+            </mat-checkbox>
+        </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <button color="accent" (click)="deleteCard(i)" mat-raised-button>Karti Sil</button>
+        <button color="primary" (click)="editCard(i, card)" mat-raised-button>Guncelle</button>
+    </mat-card-actions>
+</mat-card>
